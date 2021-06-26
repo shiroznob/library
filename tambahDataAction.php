@@ -3,12 +3,14 @@
         $nama = $_POST["Nama"];
         $password = $_POST["Password"];
 
-        require('database.php');
-        $sql = "insert into user values('','$nama','$password')";
+        require("database.php");
+        // Menselect data yang sesuai dari tabel user.
+        $sql = "SELECT*FROM user WHERE user.nama_user = '$nama' AND user.password_user = '$password'";
         $query = mysqli_query($koneksi, $sql);
         
-        if($query) {
-            echo "<script>alert('Data Berhasil Disimpan');location='homepage.html';</script>";
+        // Menghitung jumlah baris hasil dari select.
+        if(mysqli_num_rows($query) > 0) {
+            echo "<script>alert('Login Berhasil');location='homepage.html';</script>";
         } else {
             echo "<script>alert('Error');window.history.go(-1);</script>";
         }
