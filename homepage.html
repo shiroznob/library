@@ -82,15 +82,9 @@
             </div>
         </div>
         <div class="middle">
-            <h2>Most Popular Books</h2>
-            <?php
-            require("database.php");
-            $sql = "SELECT*FROM buku";
-            $query = mysqli_query($koneksi, $sql);
-            while($data = mysqli_fetch_array($query))
-            ?>  
+            <h2>Most Popular Books</h2> 
             <div class="books">
-                <a href="detail-produk.php?id=<?=$data['id_buku'];?>">
+                <a href="detail-produk1.html">
                     <div class="buku1">
                         <img src="./gambar-buku/image 1.jpg" alt="Image-1">
                         <h6>The Road</h6>
