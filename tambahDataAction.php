@@ -10,7 +10,7 @@
         
         // Menghitung jumlah baris hasil dari select.
         if(mysqli_num_rows($query) > 0) {
-            echo "<script>alert('Login Berhasil');location='homepage.html';</script>";
+            echo "<script>alert('Login Berhasil');location='homepage.php';</script>";
         } else {
             echo "<script>alert('Error');window.history.go(-1);</script>";
         }

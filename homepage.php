@@ -41,6 +41,7 @@
             gap: 50px;
             font-size: 18px;
             background: none;
+            color: white;
         }
         .logo {
             padding: 20px;
@@ -82,8 +83,14 @@
         </div>
         <div class="middle">
             <h2>Most Popular Books</h2>
+            <?php
+            require("database.php");
+            $sql = "SELECT*FROM buku";
+            $query = mysqli_query($koneksi, $sql);
+            while($data = mysqli_fetch_array($query))
+            ?>  
             <div class="books">
-                <a href="detail-produk.php">
+                <a href="detail-produk.php?id=<?=$data['id_buku'];?>">
                     <div class="buku1">
                         <img src="./gambar-buku/image 1.jpg" alt="Image-1">
                         <h6>The Road</h6>
