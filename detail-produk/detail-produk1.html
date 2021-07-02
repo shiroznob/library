@@ -12,20 +12,14 @@
             margin: 0;
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            background-color: #090A0D;
         }
         nav {
-            height: 120px;
+            height: 100%;
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: rgba(255, 255, 255, 0.25) blur(10px);
-        }
-        .bg-color::before {
-            background-color: rgba(126, 72, 72, 0.25);
-            background-size: cover;
-            filter: blur(20px);
-            -webkit-filter: blur(20px);
+            background: #090a0d;
         }
         .topbar {
             bottom: 100px;
@@ -33,17 +27,69 @@
             flex-direction: row;
             align-items: center;
             gap: 300px;
+            background: none;
         }
         .text {
             display: flex;
             flex-direction: row;
             gap: 50px;
-            font-size: 18px;
+            font-size: 28px;
             background: none;
             color: white;
         }
         .logo {
             padding: 20px;
+        }
+        .middle {
+            margin: 0;
+            padding: 0;
+            background: #090a0d;
+        }
+        .img {
+            display: flex;
+            margin: 20px;
+        }
+        .img-focus {
+            width: 20%;
+            height: 20%;
+        }
+        h5 {
+            font-size: 24px;
+            font-weight: 700;
+            font-style: normal;
+        }
+        h6 {
+            font-size: 24px;
+            font-weight: 300;
+            font-style: normal;
+        }
+        /* css footer */
+        footer {
+            position: fixed;
+            padding: 5px;
+            height: 82px;
+            width: 100%;
+            background-color: #111;
+            color: white;
+            display: flex;
+            flex-direction: row;
+            gap: 600px;
+        }
+        .kanan {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+            padding-top: 5px;
+            padding-left: 50px;
+        }
+        .kiri {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+            padding-top: 5px;
+            padding-left: 50px;
         }
     </style>
     <nav>
@@ -60,6 +106,22 @@
             <span class="iconify" data-inline="false" data-icon="mdi:account-circle-outline" style="color: #ffffff; font-size: 95px;"></span>
         </div>
     </nav>
+    <div class="middle">
+        <div class="img">
+            <img class="img-focus" src="../gambar-buku/image 1.jpg" alt="Image-1">
+        </div>
+    </div>
+    <footer>
+        <div class="kanan">
+            <h5 class="bold">The Library Project</h5>
+            <h6 class="thin"> © 2021 | Privacy Policy</h6>
+        </div>
+        <div class="kiri">
+            <img src="../icon-footer/facebook.png" alt="facebook">
+            <img src="../icon-footer/instagram.png" alt="instagram">
+            <img src="../icon-footer/twitter.png" alt="twitter">
+        </div>
+    </footer>
 </body>
 </html>
 
