@@ -46,6 +46,41 @@
         .logo {
             padding: 20px;
         }
+        .mid {
+            margin: 0;
+            padding-top: 100px;
+            background: #090a0d;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            color: white;
+            align-items: center;
+            gap: 50px;
+        }
+        table { 
+            border-collapse:collapse;
+            border-spacing:0;    
+            font-size:16px;
+            color: black;
+            }
+
+        table th {
+            font-weight:bold;
+            padding:10px;
+            color:#fff;
+            background-color:#2A72BA;
+            border-top:1px black solid;
+            border-bottom:1px black solid;
+            }
+        table td {
+            padding:10px;
+            border-top: 1px black solid;
+            border-bottom: 1px black solid;
+            text-align: center;
+            }         
+        table tr {
+            background-color: #DFEBF8;
+            }
         footer {
             padding: 5px;
             height: 82px;
