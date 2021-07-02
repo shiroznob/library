@@ -90,9 +90,9 @@
     <div class="mid">
         <?php
             require ("database.php");
-            $sql = "SELECT id_pinjam.pinjam, user.nama_user, buku.judul, DATETIME(NOW)
-                    FROM pinjaman JOIN user ON pinjaman.id_user = user.id_user
-                    JOIN buku ON pinjaman.id_buku = buku.id_buku";
+            $sql = "SELECT pinjam.id_pinjam, user.nama_user, buku.judul, tanggal
+                    FROM pinjam JOIN user ON pinjam.id_user = user.id_user
+                    JOIN buku ON pinjam.id_buku = buku.id_buku";
             $query = mysqli_query($koneksi, $sql);
         ?>
             <table border="1">
@@ -112,7 +112,7 @@
                     <td><?=$no++?></td>
                     <td><?=$data['nama_user'];?></td>
                     <td><?=$data['judul'];?></td>
-                    <td><?=$data['tanggal'];?></td>
+                    <td><?=date("d M Y");?></td>
                 </tr>
         <?php
             }
