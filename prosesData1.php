@@ -46,57 +46,35 @@
         .logo {
             padding: 20px;
         }
-        .middle {
+        .mid {
             margin: 0;
             padding: 0;
             background: #090a0d;
             flex-grow: 1;
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             color: white;
+            align-items: center;
+            gap: 50px;
         }
-        .img {
-            display: flex;
-            margin: 20px;
-            padding-left: 120px;
-        }
-        .isi {
+        .tulisan {
+            padding-top: 130px;
             display: flex;
             flex-direction: column;
-            padding-left: 50px;
-            padding-top: 20px;
-            gap: 20px;
+            align-items: center;
+            gap: 10px;
         }
-        p {
-            width: 757px;
-            height: 176px;
-            font-style: normal;
-            font-weight: 100;
-            font-size: 15px;
-            text-align: justify;
-        }
-        h2 {
-            font-style: normal;
+        .tebal {
             font-weight: bold;
-            font-size: 48px;
-            line-height: 56px;
+            font-size: 64px;
+            line-height: 75px;
+            text-align: center;
         }
-        h4 {
-            font-style: normal;
-            font-weight: 300;
-            font-size: 24px;
-            line-height: 28px;
-            padding-top: 10px;
-        }
-        h5 {
-            font-size: 24px;
-            font-weight: 700;
-            font-style: normal;
-        }
-        h6 {
-            font-size: 24px;
-            font-weight: 300;
-            font-style: normal;
+        .tipis {
+            font-weight: 200;
+            font-size: 36px;
+            line-height: 42px;
+            text-align: center;
         }
         button {
             background: #C3262E;
@@ -111,14 +89,13 @@
             font-size: 24px;
             line-height: 28px;
             color: white;
-            width: 25%;
+            width: 100%;
             align-self: center;
         }
         a {
             text-decoration: none;
             color: white;
         }
-        /* css footer */
         footer {
             padding: 5px;
             height: 82px;
@@ -150,7 +127,7 @@
         <div class="bg-color"></div>
         <div class="topbar">
             <div class="logo">
-                <img src="../logo.png" alt="The Library Project">
+                <img src="logo.png" alt="The Library Project">
             </div>
             <div class="text">
                 <h3>Home</h3>
@@ -160,42 +137,39 @@
             <span class="iconify" data-inline="false" data-icon="mdi:account-circle-outline" style="color: #ffffff; font-size: 95px;"></span>
         </div>
     </nav>
-    <div class="middle">
-        <div class="img">
-            <img class="img-focus" src="../gambar-buku/image 1.jpg" alt="Image-1" width="245">
+    <?php
+        include "database.php";
+        $id = $_GET['id'];
+        $sql = mysqli_query($koneksi, "SELECT*FROM user WHERE id_user=1");
+        $no = 1;
+        $data = mysqli_fetch_array($sql);
+    ?>
+    <div class="mid">
+        <div class="tulisan">
+            <h5 class="tebal">Thank You <?php echo $data['nama_user'];?></h5>
+            <h6 class="tipis">for borrowing a books from us</h6>
         </div>
-        <div class="isi">
-            <div class="judul">
-                <h2 class="bold">The Road</h2>
-                <h4 class="thin">By Cormac Mccarthy</h4>
-            </div>
-            <div class="sinopsis">
-                <h5>Sinopsis:</h5>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus efficitur eros mi, vitae porttitor enim hendrerit vel.
-                    Nunc mattis ac metus et congue. Cras commodo sapien sed lacus dapibus ultrices.
-                    Aenean nibh tortor, fermentum quis orci ut, hendrerit consectetur purus.
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non nisl elit.
-                    Aliquam quis tristique nunc. Nam in blandit nunc. Phasellus tempor velit sed finibus maximus.
-                    Nulla non est et sapien lobortis cursus. Donec at odio eget metus iaculis sodales.
-                    In hac habitasse platea dictumst. Donec quis dapibus leo. Donec eget rutrum ligula.
-                </p>
-            </div>
-            <button type="submit">
-                <a href="../prosesData1.php?id=1">Borrow</a>
+        <div class="submit">
+            <button>
+                <a href="dashboard.php">Dashboard</a>
             </button>
         </div>
     </div>
     <footer>
         <div class="kanan">
-            <h5 class="bold">The Library Project</h5>
-            <h6 class="thin"> © 2021 | Privacy Policy</h6>
+            <h5 class="bold" style="font-weight: bold;
+            font-size: 18px;
+            line-height: 21px;
+            text-align: center;">The Library Project</h5>
+            <h6 class="thin" style="font-weight: 300;
+            font-size: 18px;
+            line-height: 21px;
+            text-align: center;"> © 2021 | Privacy Policy</h6>
         </div>
         <div class="kiri">
-            <img src="../icon-footer/facebook.png" alt="facebook">
-            <img src="../icon-footer/instagram.png" alt="instagram">
-            <img src="../icon-footer/twitter.png" alt="twitter">
+            <img src="icon-footer/facebook.png" alt="facebook">
+            <img src="icon-footer/instagram.png" alt="instagram">
+            <img src="icon-footer/twitter.png" alt="twitter">
         </div>
     </footer>
 </body>
