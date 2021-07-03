@@ -1,3 +1,4 @@
+<?php require ("database.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -144,7 +145,7 @@
     </nav>
     <div class="mid">
         <?php
-            require ("database.php");
+            
             $id = $_SESSION["id"];
             $sql = "SELECT pinjam.id_pinjam, user.nama_user, buku.judul, tanggal
                     FROM pinjam JOIN user ON pinjam.id_user = user.id_user
