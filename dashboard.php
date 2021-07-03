@@ -145,9 +145,10 @@
     <div class="mid">
         <?php
             require ("database.php");
+            $id = $_SESSION["id"];
             $sql = "SELECT pinjam.id_pinjam, user.nama_user, buku.judul, tanggal
                     FROM pinjam JOIN user ON pinjam.id_user = user.id_user
-                    JOIN buku ON pinjam.id_buku = buku.id_buku";
+                    JOIN buku ON pinjam.id_buku = buku.id_buku where user.id_user = $id";
             $query = mysqli_query($koneksi, $sql);
         ?>
             <table border="1">

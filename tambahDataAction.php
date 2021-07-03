@@ -7,9 +7,11 @@
         // Menselect data yang sesuai dari tabel user.
         $sql = "SELECT*FROM user WHERE user.nama_user = '$nama' AND user.password_user = '$password'";
         $query = mysqli_query($koneksi, $sql);
+        $data = mysqli_fetch_assoc($query);
         
         // Menghitung jumlah baris hasil dari select.
         if(mysqli_num_rows($query) > 0) {
+            $_SESSION["id"] = $data["id_user"];
             echo "<script>alert('Login Berhasil');location='homepage.html';</script>";
         } else {
             echo "<script>alert('Error');window.history.go(-1);</script>";

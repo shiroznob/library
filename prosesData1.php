@@ -140,8 +140,9 @@
     <?php
         include "database.php";
         $id = $_GET['id'];
-        $sql1 = "SELECT*FROM user WHERE id_user=$id";
-        $sql2 = "INSERT INTO pinjam VALUE (2, 1, $id, NOW())";
+        $id_user = $_SESSION["id"];
+        $sql1 = "SELECT*FROM user WHERE id_user=$id_user";
+        $sql2 = "INSERT INTO pinjam VALUE (null, $id_user, $id, NOW())";
         $no = 1;
         $query1 = mysqli_query($koneksi, $sql1);
         $query2 = mysqli_query($koneksi, $sql2);

@@ -3,7 +3,7 @@
     $user = 'root';
     $pass = '';
     $koneksi = mysqli_connect($host, $user, $pass);
-
+    session_start();
     if(!$koneksi) {
         die ("Gagal menyambungkan koneksi: ".mysqli_errno($koneksi)." - ".mysqli_error($koneksi));
     }
