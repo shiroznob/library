@@ -140,10 +140,14 @@
     <?php
         include "database.php";
         $id = $_GET['id'];
-        $sql1 = mysqli_query($koneksi, "SELECT*FROM user WHERE id_user=1");
-        $sql2 = mysqli_query($koneksi, "INSERT iNTO pinjam VALUES ('', 1, $id, NOW()");
+        $sql1 = "SELECT*FROM user WHERE id_user=$id";
+        $sql2 = "INSERT INTO pinjam VALUE (NULL, 1, $id, NOW())";
         $no = 1;
-        $data = mysqli_fetch_array($sql1);
+        $query1 = mysqli_query($koneksi, $sql1);
+        $query2 = mysqli_query($koneksi, $sql2);
+        $data = mysqli_fetch_array($query1);
+        // echo $sql2;
+                  
     ?>
     <div class="mid">
         <div class="tulisan">

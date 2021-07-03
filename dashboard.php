@@ -107,12 +107,32 @@
             padding-top: 5px;
             padding-left: 50px;
         }
+        button {
+            display: flex;
+            width: 100%;
+            background-color: #97191D; 
+            border: none;
+            color: white;
+            padding: 10px 27px;
+            margin: 4px 2px;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        button:hover {
+            cursor: pointer;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+        }
     </style>
     <nav>
         <div class="bg-color"></div>
         <div class="topbar">
             <div class="logo">
-                <img src="logo.png" alt="The Library Project">
+                <img src="logo.png" alt="The Library Project" href="homepage.html">
             </div>
             <div class="text">
                 <h3>Home</h3>
@@ -139,7 +159,6 @@
                 </tr>
         <?php		
                 $no = 1;
-                // error nya di sini padahal dh bener menurutku :(
                 while($data = mysqli_fetch_array($query)) {
                 extract($data);
         ?>
@@ -153,6 +172,11 @@
             }
         ?>
             </table>
+            <div class="submit">
+                <button>
+                    <a href="homepage.html">Home</a>
+                </button>
+            </div>
     </div>
     <footer>
         <div class="kanan">

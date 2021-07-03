@@ -140,18 +140,18 @@
     <?php
         include "database.php";
         $id = $_GET['id'];
-        $sql = "SELECT*FROM user WHERE id_user=2;";
-        $sql .= "INSERT iNTO pinjam VALUES ('', 1, $id, NOW()";
+        $sql1 = "SELECT*FROM user WHERE id_user=$id";
+        $sql2 = "INSERT INTO pinjam VALUE (2, 1, $id, NOW())";
         $no = 1;
-        
-        if(mysqli_multi_query($koneksi, $sql)) {
-            do{
-                if($result = mysqli_store_result($koneksi)) {
-                    while($row = mysqli_fetch_array($result)) {            
+        $query1 = mysqli_query($koneksi, $sql1);
+        $query2 = mysqli_query($koneksi, $sql2);
+        $data = mysqli_fetch_array($query1);
+        // echo $sql2;
+                  
     ?>
     <div class="mid">
         <div class="tulisan">
-            <h5 class="tebal">Thank You <?php echo $row['nama_user'];?></h5>
+            <h5 class="tebal">Thank You <?php echo $data['nama_user'];?></h5>
             <h6 class="tipis">for borrowing a books from us</h6>
         </div>
         <div class="submit">
@@ -160,13 +160,6 @@
             </button>
         </div>
     </div>
-    <?php
-                    }
-                    mysqli_free_result($result);
-                }
-            } while(mysqli_next_result($koneksi));
-        }
-    ?>
     <footer>
         <div class="kanan">
             <h5 class="bold" style="font-weight: bold;
